@@ -68,7 +68,7 @@ const Friends = () => {
 
             {/* ALL FRIENDS */}
             {navigation === "All" && senderInfo && (
-                <div className='flex flex-col flex-1 w-full gap-4 py-5 pl-5'>
+                <div className='flex flex-col flex-1 w-full gap-4 py-5 pl-5 overflow-y-scroll'>
                     <h3 className='text-lg'>
                         All Friends - {senderInfo.friends.length === 0 ? "0" : senderInfo.friends.length }
                     </h3>

@@ -71,7 +71,9 @@ const Chats = () => {
             {/* CHATS */}
             <div>
                 {chats.map((chat, index) => (
-                    <Chat key={chat.id || index} chat={chat}/>
+                    <div className='max-w-[225px] sm:max-w-full'>
+                        <Chat key={chat.id || index} chat={chat}/>
+                    </div>
                 ))}
             </div>
 

@@ -32,13 +32,13 @@ const Chat = ({chat}) => {
     return (
         <>
             {chat.id && receiverInfo && (
-                <div className="relative mb-8 mt-2 flex w-full cursor-pointer items-center gap-4" onClick={() => {chatDispatch ({type:"UPDATE_CHAT_INFO", payload: {currentChatId: chat.id, currentReceiverId: receiverInfo.id}})}}>
+                <div className="relative flex items-center w-full gap-4 mt-2 mb-8 cursor-pointer" onClick={() => {chatDispatch ({type:"UPDATE_CHAT_INFO", payload: {currentChatId: chat.id, currentReceiverId: receiverInfo.id}})}}>
                     {receiverInfo.photoURL.length > 0 ? (
-                        <div className='flex max-h-14 max-w-14 cursor-pointer items-center justify-center'>
+                        <div className='flex items-center justify-center cursor-pointer max-h-14 max-w-14'>
                             <img 
                                 src={receiverInfo.photoURL}
                                 alt="profile"
-                                className='h-full w-full rounded-full'
+                                className='w-full h-full rounded-full'
                             />
                         </div>
                     ) : (
@@ -47,7 +47,7 @@ const Chat = ({chat}) => {
                         </div>
                     )}
 
-                    <div className="flex w-full flex-col truncate">
+                    <div className="flex flex-col w-full truncate">
                         <h4 className="mb-1 text-lg font-medium">
                             {receiverInfo.displayName}
                         </h4>
@@ -56,14 +56,14 @@ const Chat = ({chat}) => {
                         </p>
                     </div>
 
-                    <div className="absolute right-1 top-1 hidden sm:flex">
+                    <div className="absolute hidden right-1 top-1 sm:flex">
                         <p>  
                             {chat.timestamp && formatTimestamp(chat.timestamp)} 
                         </p>
                     </div>
 
                     <div 
-                        className="absolute flex h-full w-full cursor-pointer lg:hidden" 
+                        className="absolute flex w-full h-full cursor-pointer lg:hidden" 
                         onClick={() => setShowMessages(!showMessages)}
                     />
                 </div>

@@ -51,7 +51,7 @@ const MessageModal = ({setShowMessageModal}) => {
     }, [searchInput, currentUser])
 
     return (
-        <div className='absolute left-0 top-0 z-30 flex h-screen w-screen items-center justify-center bg-black bg-opacity-25'>
+        <div className='absolute top-0 left-0 z-30 flex items-center justify-center w-screen h-screen bg-black bg-opacity-25'>
             <div className='mx-5 flex w-full max-w-[450px] flex-col justify-between rounded-lg bg-white p-5'>
                 <div className='flex flex-col gap-4'>
                     <h2 className='px-2 text-2xl font-medium'>
@@ -72,14 +72,14 @@ const MessageModal = ({setShowMessageModal}) => {
 
                 <div>
                     {users.length > 0 && (
-                        <div key={users[0].id} className='my-6 flex w-full items-center justify-between'>
+                        <div key={users[0].id} className='flex items-center justify-between w-full my-6'>
                             <div className='flex items-center gap-4'>
                                 {users[0].id && users[0].photoURL.length > 0 ? (
-                                    <div className='flex max-h-14 max-w-14 cursor-pointer items-center justify-center'>
+                                    <div className='flex items-center justify-center cursor-pointer max-h-14 max-w-14'>
                                         <img 
                                             src={users[0].photoURL}
                                             alt="profile"
-                                            className='h-full w-full rounded-full'
+                                            className='w-full h-full rounded-full'
                                         />
                                     </div>
                                 ) : (

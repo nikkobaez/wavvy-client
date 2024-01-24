@@ -51,14 +51,14 @@ const ChatModal = ({searchInput, setSearchInput}) => {
     return (
         <>
             {chats.length > 0 && receiverInfo.length > 0 && (
-                <div className='w-full rounded-xl bg-white p-5 shadow-md' onClick={handleClick}>
-                    <div className="relative flex w-full cursor-pointer items-center gap-4">
+                <div className='w-full p-5 bg-white shadow-md rounded-xl' onClick={handleClick}>
+                    <div className="relative flex items-center w-full gap-4 cursor-pointer">
                         {receiverInfo[0].id && receiverInfo[0].photoURL.length > 0 ? (
-                            <div className='flex max-h-14 max-w-14 cursor-pointer items-center justify-center'>
+                            <div className='flex items-center justify-center cursor-pointer max-h-14 max-w-14 min-h-14 min-w-14'>
                                 <img 
                                     src={receiverInfo[0].photoURL}
                                     alt="profile"
-                                    className='h-full w-full rounded-full'
+                                    className='w-full h-full rounded-full'
                                 />
                             </div>
                         ) : (
@@ -67,7 +67,7 @@ const ChatModal = ({searchInput, setSearchInput}) => {
                             </div>
                         )}
 
-                        <div className="w-full flex-col truncate">
+                        <div className="flex-col w-full truncate">
                             <h4 className="mb-1 text-lg font-medium">
                                 {receiverInfo[0].id && receiverInfo[0].displayName}
                             </h4>
@@ -76,7 +76,7 @@ const ChatModal = ({searchInput, setSearchInput}) => {
                             </p>
                         </div>
 
-                        <div className="absolute right-1 top-1 hidden md:flex">
+                        <div className="absolute hidden right-1 top-1 md:flex">
                             <p>  
                                 {chats[0].id && chats[0].timestamp && formatTimestamp(chats[0].timestamp)} 
                             </p>

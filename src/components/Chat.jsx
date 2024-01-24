@@ -34,7 +34,7 @@ const Chat = ({chat}) => {
             {chat.id && receiverInfo && (
                 <div className="relative flex items-center w-full gap-4 mt-2 mb-8 cursor-pointer" onClick={() => {chatDispatch ({type:"UPDATE_CHAT_INFO", payload: {currentChatId: chat.id, currentReceiverId: receiverInfo.id}})}}>
                     {receiverInfo.photoURL.length > 0 ? (
-                        <div className='flex items-center justify-center cursor-pointer max-h-14 max-w-14'>
+                        <div className='flex items-center justify-center cursor-pointer max-h-14 max-w-14 min-w-14 min-h-14'>
                             <img 
                                 src={receiverInfo.photoURL}
                                 alt="profile"
